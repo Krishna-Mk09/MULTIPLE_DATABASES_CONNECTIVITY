@@ -1,4 +1,4 @@
-package com.solix.jdp.MULTIPLE_DATABASES_CONNECTIVITY.primaryDomain;
+package com.solix.jdp.MULTIPLE_DATABASES_CONNECTIVITY.secondaryDomain;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -9,8 +9,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "userD")
-public class User {
+@Table(name = "employeeD")
+public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
