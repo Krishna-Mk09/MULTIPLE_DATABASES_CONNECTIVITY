@@ -7,10 +7,7 @@ import com.solix.jdp.MULTIPLE_DATABASES_CONNECTIVITY.secondaryService.EmployeeSe
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1")
@@ -38,4 +35,13 @@ public class UserController {
 
     }
 
+    @GetMapping("/getUser/{name}")
+    public ResponseEntity<?> getUserByName(@PathVariable String name) {
+        return new ResponseEntity<>(this.userService.getUserByName(name), HttpStatus.OK);
+    }
+
+    @GetMapping("/getEmployee/{name}")
+    public ResponseEntity<?> getEmployeeByName(@PathVariable String name) {
+        return new ResponseEntity<>(this.employeeService.getEmployeeByName(name), HttpStatus.OK);
+    }
 }
